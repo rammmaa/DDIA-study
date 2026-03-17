@@ -9,8 +9,8 @@ description: >
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url:              'https://rammmaa.github.io'
+baseurl:          '/DDIA-study'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
@@ -50,17 +50,12 @@ exclude:
   - _drafts
 
 collections:
-  pages:
-    output: true
-    permalink: /:collection/:path/
-  others:
+  chapters:
     output: true
     permalink: /:collection/:path/
 
 ordered_collections:
-  - posts
-  - pages
-  - others
+  - chapters
 
 page_width: 800px
 

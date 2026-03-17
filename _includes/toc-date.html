@@ -48,72 +48,32 @@
 
             <li class="divider"></li>
 
-            {% if site.ordered_collections %}
-                {% for label in site.ordered_collections %}
-                    {% assign collection = site.collections | where: "label", label | first %}
-                    <!-- <p>{{ collection.label }}</p> -->
-                    {% if collection.output %}
-                        {% if collection.label == "posts" %}
-                            {% assign reversed_posts = site[collection.label] | reverse %}
-                        {% else %}
-                            {% assign reversed_posts = site[collection.label] %}
-                        {% endif %}
+            {% assign all_chapters = site.chapters | sort: "order" %}
+            {% assign categories = all_chapters | map: "category" | uniq %}
 
-                        {% for post in reversed_posts %}
-                            {% if page.url == post.url %}
-                            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                            {% else %}
-                            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                            {% endif %}
-                                <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
-                                    {{ post.title | escape }}
-                                </a>
-                                {% if site.toc.enabled %}
-                                    {% if page.url == post.url %}
-                                        {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                                    {% endif %}
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-
-                        {% if reversed_posts.size > 0 %}
-                            <li class="divider"></li>
-                        {% endif %}
+            {% for cat in categories %}
+                <li class="chapter header">
+                    <strong>{{ cat }}</strong>
+                </li>
+                {% assign cat_posts = all_chapters | where: "category", cat %}
+                {% for post in cat_posts %}
+                    {% if page.url == post.url %}
+                    <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                    {% else %}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                     {% endif %}
-                {% endfor %}
-            {% else %}
-                {% for collection in site.collections %}
-                    <!-- <p>{{ collection.label }}</p> -->
-                    {% if collection.output %}
-                        {% if collection.label == "posts" %}
-                            {% assign reversed_posts = site[collection.label] | reverse %}
-                        {% else %}
-                            {% assign reversed_posts = site[collection.label] %}
-                        {% endif %}
-
-                        {% for post in reversed_posts %}
+                        <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)" style="padding-left: 30px;">
+                            {{ post.title | escape }}
+                        </a>
+                        {% if site.toc.enabled %}
                             {% if page.url == post.url %}
-                            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                            {% else %}
-                            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                                {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
                             {% endif %}
-                                <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
-                                    {{ post.title | escape }}
-                                </a>
-                                {% if site.toc.enabled %}
-                                    {% if page.url == post.url %}
-                                        {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                                    {% endif %}
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-
-                        {% if reversed_posts.size > 0 %}
-                            <li class="divider"></li>
                         {% endif %}
-                    {% endif %}
+                    </li>
                 {% endfor %}
-            {% endif %}
+                <li class="divider"></li>
+            {% endfor %}
         </ul>
     </nav>
 </div>
