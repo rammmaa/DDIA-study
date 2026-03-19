@@ -1,9 +1,0 @@
-@import url("https://giscus.app/default.css");
-
-.gsc-main .gsc-reactions .gsc-reactions-count {
-  font-weight: 600;
-}
-
-.gsc-main .gsc-reactions {
-  justify-content: flex-start;
-}
