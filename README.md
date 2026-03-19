@@ -34,5 +34,3 @@ permalink: /
 | 8 | 5/18 ~ 5/24 | Ch10. Batch Processing |
 | 9 | 5/25 ~ 5/31 | Ch11. Stream Processing |
 | 10 | 6/1 ~ 6/7 | Ch12. The Future of Data Systems |
-
-공부하고 질문해요. 맛밥해요. 친해져요.
