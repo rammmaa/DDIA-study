@@ -1,13 +1,23 @@
 @import url("https://giscus.app/default.css");
 
 .gsc-reactions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gsc-reactions-count {
   text-align: left;
 }
 
-.gsc-reactions .gsc-reactions-count {
-  text-align: left;
-}
-
-.gsc-reactions-button {
+.gsc-reactions-buttons {
   justify-content: flex-start;
+}
+
+.gsc-social-reaction-summary-item {
+  justify-content: flex-start;
+}
+
+.gsc-reaction-button {
+  margin-right: 4px;
 }
