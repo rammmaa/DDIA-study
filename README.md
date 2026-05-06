@@ -29,8 +29,9 @@ permalink: /
 | 4 | 4/13 ~ 4/19 | Ch5. Replication |
 | - | 4/20 ~ 4/26 | 중간고사 (휴식) |
 | 5 | 4/27 ~ 5/3 | Ch6. Partitioning + Ch7. Transactions |
-| 6 | 5/4 ~ 5/10 | Ch8. The Trouble with Distributed Systems |
-| 7 | 5/11 ~ 5/17 | Ch9. Consistency and Consensus |
-| 8 | 5/18 ~ 5/24 | Ch10. Batch Processing |
-| 9 | 5/25 ~ 5/31 | Ch11. Stream Processing |
-| 10 | 6/1 ~ 6/7 | Ch12. The Future of Data Systems |
+| - | 5/4 ~ 5/10 | 캐치업 주간 |
+| 6 | 5/11 ~ 5/17 | Ch8. The Trouble with Distributed Systems |
+| 7 | 5/18 ~ 5/24 | Ch9. Consistency and Consensus |
+| 8 | 5/25 ~ 5/31 | Ch10. Batch Processing |
+| 9 | 6/1 ~ 6/7 | Ch11. Stream Processing |
+| 10 | 6/8 ~ 6/14 | Ch12. The Future of Data Systems |
